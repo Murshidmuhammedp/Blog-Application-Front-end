@@ -1,26 +1,26 @@
 "use client";
 
-import { useState } from 'react';
 import LogoNavbar from '@/components/LogoNavbar';
 import InputField from '@/components/InputField';
 import Image from 'next/image';
-import logo from '../../../../public/images/image.png'
-import { useForm } from 'react-hook-form';
+import logo from '../../../../public/images/image.png';
+import { FormProvider, useForm } from 'react-hook-form';
+import { signUpSchema } from '@/schemas/authSchema';
+import { zodResolver } from '@hookform/resolvers/zod'
+import api from '@/api/interSepter';
+import toast from 'react-hot-toast';
 
 const SignUp = () => {
-    const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
-    const [designation, setDesignation] = useState('');
-    const [password, setPassword] = useState('');
-    const [termsAccepted, setTermsAccepted] = useState(false);
+    const methods = useForm({ resolver: zodResolver(signUpSchema) });
+    const { register, formState: { errors } } = methods;
 
-    const handleRegister = () => {
-        if (termsAccepted) {
-            // Implement login logic here
-            console.log('Email:', email);
-            console.log('Password:', password);
-        } else {
-            alert('Please accept the terms and conditions');
+    const onSubmit = async (data) => {
+        try {
+            const { termsAccepted, ...dataToSend } = data;
+            const response = await api.post('/api/v1/users/register', dataToSend)
+            toast.success(response.data.message)
+        } catch (error) {
+            console.log(error)
         }
     };
 
@@ -41,61 +41,65 @@ const SignUp = () => {
                 </div>
 
                 <div className="order-2 flex items-center w-full md:w-2/3 p-4 md:p-8">
-                    <form onSubmit={handleRegister} className='flex flex-col w-full md:w-auto'>
-                        <div className="space-y-4">
-                            <InputField
-                                label="Full Name"
-                                type="text"
-                                value={fullName}
-                                onChange={(e) => setFullName(e.target.value)}
-                                placeholder="Enter Your Full Name"
-                                required={true}
-                            />
-                            <InputField
-                                label="Email Address"
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                placeholder="Enter Your Email Address"
-                                required={true}
-                            />
-                            <InputField
-                                label="Designation"
-                                type="text"
-                                value={designation}
-                                onChange={(e) => setDesignation(e.target.value)}
-                                placeholder="Enter Your Designation"
-                                required={true}
-                            />
-                            <InputField
-                                label="Password"
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Enter Your Password"
-                                required={true}
-                            />
-                            <div className="flex items-center mt-4">
-                                <input
-                                    type="checkbox"
-                                    checked={termsAccepted}
-                                    onChange={(e) => setTermsAccepted(e.target.checked)}
-                                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                    <FormProvider {...methods}>
+                        <form onSubmit={methods.handleSubmit(onSubmit)} className='flex flex-col w-full md:w-auto'>
+                            <div className="space-y-4">
+                                <InputField
+                                    name="FullName"
+                                    label="Full Name"
+                                    type="text"
+                                    placeholder="Enter Your Full Name"
+                                    error={errors.FullName?.message}
+                                    {...register("FullName")}
                                 />
-                                <label className="ml-2 text-sm">I agree with Terms of Use and Privacy Policy</label>
+                                <InputField
+                                    label="Email Address"
+                                    type="email"
+                                    name="email"
+                                    placeholder="Enter Your Email Address"
+                                    error={errors.email?.message}
+                                    {...register("email")}
+                                />
+                                <InputField
+                                    label="Designation"
+                                    type="text"
+                                    name="Designation"
+                                    placeholder="Enter Your Designation"
+                                    error={errors.Designation?.message}
+                                    {...register("Designation")}
+                                />
+                                <InputField
+                                    name="Password"
+                                    label="Password"
+                                    type="password"
+                                    placeholder="Enter Your Password"
+                                    error={errors.Password?.message}
+                                    {...register("Password")}
+                                />
+                                <div className="flex items-center mt-4">
+                                    <input
+                                        type="checkbox"
+                                        {...register("termsAccepted", {
+                                            required: "You must accept the terms and conditions",
+                                        })}
+                                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                    />
+                                    <label className="ml-2 text-sm">I agree with Terms of Use and Privacy Policy</label>
+                                </div>
+                                {errors.termsAccepted && (
+                                    <p className='text-red-500 text-sm'>{errors.termsAccepted.message}</p>
+                                )}
+                                <div className='w-full flex justify-center items-center'>
+                                    <button
+                                        type='submit'
+                                        className='px-8 py-2 text-black font-bold rounded bg-yellow-600 hover:bg-yellow-700'
+                                    >
+                                        Sign Up
+                                    </button>
+                                </div>
                             </div>
-                            <div className='w-full flex justify-center items-center'>
-                                <button
-                                    type='submit'
-                                    disabled={!termsAccepted}
-                                    className={`px-8 py-2 text-black font-bold rounded ${termsAccepted ? 'bg-yellow-600 hover:bg-yellow-700' : 'bg-yellow-400 cursor-not-allowed'
-                                        }`}
-                                >
-                                    Sign Up
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </FormProvider>
                 </div>
             </div>
         </div>
