@@ -1,88 +1,64 @@
-const Footer = () => {
+// app/page.js (or your corresponding main page file in the src/app structure)
+import React from 'react';
+
+const Page = () => {
   return (
-    <footer className="bg-black text-white py-8">
-      <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
-        {/* Column 1 */}
-        <div>
-          <h4 className="font-semibold mb-2">Home</h4>
-          <ul>
-            <li><a href="#" className="text-gray-400 hover:text-white">Features</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Blogs</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Resources <span className="bg-red-500 text-white text-xs ml-1 px-1 rounded">New</span></a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Testimonials</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Contact Us</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Newsletter</a></li>
-          </ul>
+    <main className="min-h-screen bg-gray-900 text-white p-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <div className="flex items-center gap-6 mb-12">
+          <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+            <svg viewBox="0 0 24 24" className="w-10 h-10 text-gray-900">
+              <path
+                fill="currentColor"
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+              />
+            </svg>
+          </div>
         </div>
 
-        {/* Column 2 */}
-        <div>
-          <h4 className="font-semibold mb-2">News</h4>
-          <ul>
-            <li><a href="#" className="text-gray-400 hover:text-white">Trending Stories</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Featured Videos</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Technology</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Health</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Politics</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Environment</a></li>
-          </ul>
+        {/* Hero Section */}
+        <div className="mb-16">
+          <p className="text-sm text-gray-400 mb-2">Learn, Connect, and Innovate</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Be Part of the Future Tech Revolution
+          </h1>
+          <p className="text-gray-400 max-w-2xl">
+            Immerse yourself in the world of future technology. Explore our comprehensive resources,
+            connect with fellow tech enthusiasts, and drive innovation in the industry. Join a
+            dynamic community of forward-thinkers.
+          </p>
         </div>
 
-        {/* Column 3 */}
-        <div>
-          <h4 className="font-semibold mb-2">Blogs</h4>
-          <ul>
-            <li><a href="#" className="text-gray-400 hover:text-white">Quantum Computing</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">AI Ethics</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Space Exploration</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Biotechnology <span className="bg-red-500 text-white text-xs ml-1 px-1 rounded">New</span></a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Renewable Energy</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Biohacking</a></li>
-          </ul>
-        </div>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Feature Card 1 */}
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold mb-2">Resource Access</h2>
+            <p className="text-gray-400">
+              Visitors can access a wide range of resources, including ebooks, whitepapers, and reports.
+            </p>
+          </div>
 
-        {/* Column 4 */}
-        <div>
-          <h4 className="font-semibold mb-2">Podcasts</h4>
-          <ul>
-            <li><a href="#" className="text-gray-400 hover:text-white">AI Revolution</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">AI Revolution <span className="bg-red-500 text-white text-xs ml-1 px-1 rounded">New</span></a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">TechTalk AI</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">AI Conversations</a></li>
-          </ul>
-        </div>
+          {/* Feature Card 2 */}
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold mb-2">Community Forum</h2>
+            <p className="text-gray-400">
+              Join our active community forum to discuss industry trends, share insights, and collaborate with peers.
+            </p>
+          </div>
 
-        {/* Column 5 */}
-        <div>
-          <h4 className="font-semibold mb-2">Resources</h4>
-          <ul>
-            <li><a href="#" className="text-gray-400 hover:text-white">Whitepapers</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Ebooks</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Reports</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-white">Research Papers</a></li>
-          </ul>
+          {/* Feature Card 3 */}
+          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 className="text-xl font-semibold mb-2">Tech Events</h2>
+            <p className="text-gray-400">
+              Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.
+            </p>
+          </div>
         </div>
-
       </div>
-      <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-        <div className="flex justify-center space-x-4 mb-4">
-          <a href="#" className="text-gray-400 hover:text-white">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white">
-            <i className="fab fa-facebook"></i>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white">
-            <i className="fab fa-linkedin"></i>
-          </a>
-        </div>
-        <p className="text-gray-400 text-sm">
-          &copy; 2024 FutureTech. All rights reserved.
-        </p>
-      </div>
-    </footer>
+    </main>
   );
 };
 
-export default Footer;
-
+export default Page;
