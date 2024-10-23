@@ -3,7 +3,7 @@
 import LogoNavbar from '@/components/LogoNavbar';
 import InputField from '@/components/InputField';
 import Image from 'next/image';
-import logo from '../../../../public/images/image.png'
+import logo from '../../../../public/images/image1.png'
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signInSchema } from '@/schemas/authSchema';
