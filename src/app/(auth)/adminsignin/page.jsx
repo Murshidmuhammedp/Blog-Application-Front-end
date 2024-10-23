@@ -1,8 +1,25 @@
-import React from 'react';
+"use client"
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import signinImage from '../../../../public/images/adminLogin.png'; // Replace with your image path
+import api from '@/api/interSepter';
+import toast from 'react-hot-toast';
 
 const SignIn = () => {
+
+    const [email, setemail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await api.post('/api/v1/admin/login', { email, password })
+            toast.success(response.data.message)
+        } catch (error) {
+            toast.error(error.response.data.message)
+        }
+    }
     return (
         <div className='w-full min-h-screen flex justify-center items-center p-16'>
             <div className="flex h-[700px]">
@@ -11,7 +28,7 @@ const SignIn = () => {
                     <div className="max-w-md mx-auto w-full">
                         <h2 className="text-5xl font-semibold mb-1">Login</h2>
                         <p className='mb-6 text-gray-500'>How do i get started?</p>
-                        <form className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             {/* Email Input */}
                             <div>
                                 <label htmlFor="email" className="block">Email</label>
@@ -20,6 +37,8 @@ const SignIn = () => {
                                     id="email"
                                     className="mt-1 block w-full p-3 border border-gray-400 rounded-lg focus:outline-none bg-gray-800"
                                     placeholder="Enter your email"
+                                    required
+                                    onChange={e => setemail(e.target.value)}
                                 />
                             </div>
 
@@ -31,6 +50,8 @@ const SignIn = () => {
                                     id="password"
                                     className="mt-1 block w-full p-3 border border-gray-300 rounded-lg focus:outline-none bg-gray-800"
                                     placeholder="Enter your password"
+                                    required
+                                    onChange={e => setPassword(e.target.value)}
                                 />
                             </div>
 
