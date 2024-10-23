@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import signinImage from '../../../../public/images/adminLogin.png'; // Replace with your image path
+import signinImage from '../../../../public/images/adminLogin.png';
 import api from '@/api/interSepter';
 import toast from 'react-hot-toast';
 
@@ -23,13 +23,11 @@ const SignIn = () => {
     return (
         <div className='w-full min-h-screen flex justify-center items-center p-16'>
             <div className="flex h-[700px]">
-                {/* Left Side - Form */}
                 <div className="w-full md:w-1/2  flex flex-col justify-center p-8 bg-customGray">
                     <div className="max-w-md mx-auto w-full">
                         <h2 className="text-5xl font-semibold mb-1">Login</h2>
                         <p className='mb-6 text-gray-500'>How do i get started?</p>
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            {/* Email Input */}
                             <div>
                                 <label htmlFor="email" className="block">Email</label>
                                 <input
@@ -41,8 +39,6 @@ const SignIn = () => {
                                     onChange={e => setemail(e.target.value)}
                                 />
                             </div>
-
-                            {/* Password Input */}
                             <div>
                                 <label htmlFor="password" className="block">Password</label>
                                 <input
@@ -54,13 +50,9 @@ const SignIn = () => {
                                     onChange={e => setPassword(e.target.value)}
                                 />
                             </div>
-
-                            {/* Forgot Password */}
                             <div className="text-right">
                                 <a href="#" className="text-yellow-600 hover:underline">Forgot Password?</a>
                             </div>
-
-                            {/* Sign In Button */}
                             <button
                                 type="submit"
                                 className="w-full bg-yellow-400 text-white py-3 rounded-lg hover:bg-yellow-500 transition"
@@ -76,8 +68,6 @@ const SignIn = () => {
                         </form>
                     </div>
                 </div>
-
-                {/* Right Side - Image */}
                 <div className="w-1/2 hidden md:block ">
                     <Image src={signinImage} alt="Admin image" className="h-[700px]" />
                 </div>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import logo from '../../public/images/1.png';
+import logo from '../../public/images/futureTech.png';
 
 const LogoNavbar = () => {
   return (
