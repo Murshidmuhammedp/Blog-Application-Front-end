@@ -28,7 +28,7 @@ const Sidebar = () => {
                     {isBlogOpen && (
                         <div className="ml-4 mt-2 space-y-2">
                             <a href="blogcreate" className="block p-2 hover:bg-gray-700 rounded">Create Blog</a>
-                            <a href="#" className="block p-2 hover:bg-gray-700 rounded">List Blog</a>
+                            <a href="bloglist" className="block p-2 hover:bg-gray-700 rounded">List Blog</a>
                         </div>
                     )}
                 </div>
