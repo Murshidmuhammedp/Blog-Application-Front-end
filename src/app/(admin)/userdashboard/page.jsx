@@ -36,7 +36,7 @@ const UserCard = ({ user }) => {
             <Sidebar />
 
             {userData.map((user, index) => (
-                <div key={index} className="bg-gray-800 rounded-lg shadow-lg p-6 w-64 text-center mx-auto my-10 h-[350px]">
+                <div key={index} className="bg-userCard rounded-lg shadow-lg p-6 w-64 text-center mx-auto my-10 h-[350px]">
                     <div className="flex justify-center mb-4">
                         <img
                             src={user?.image || 'https://via.placeholder.com/100'}

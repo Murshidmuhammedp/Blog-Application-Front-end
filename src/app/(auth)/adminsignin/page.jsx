@@ -22,7 +22,7 @@ const SignIn = () => {
     }
     return (
         <div className='w-full min-h-screen flex justify-center items-center p-16'>
-            <div className="flex h-[700px]">
+            <div className="flex h-[600px]">
                 <div className="w-full md:w-1/2  flex flex-col justify-center p-8 bg-customGray">
                     <div className="max-w-md mx-auto w-full">
                         <h2 className="text-5xl font-semibold mb-1">Login</h2>
@@ -69,7 +69,7 @@ const SignIn = () => {
                     </div>
                 </div>
                 <div className="w-1/2 hidden md:block ">
-                    <Image src={signinImage} alt="Admin image" className="h-[700px]" />
+                    <Image src={signinImage} alt="Admin image" className="h-[600px]" />
                 </div>
             </div>
         </div>
