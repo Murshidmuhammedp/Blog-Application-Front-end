@@ -174,7 +174,8 @@ const HomePage = () => {
           )}
 
           {/* Grid for other blogs */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-gray-700 p-14">
+            
             {blogs.slice(1, 7).map((blog, index) => (
               <div key={index} className="bg-customGray rounded-lg shadow-md p-4">
                 <img
