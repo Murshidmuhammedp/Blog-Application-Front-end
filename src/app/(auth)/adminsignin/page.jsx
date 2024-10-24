@@ -17,7 +17,6 @@ const SignIn = () => {
         e.preventDefault();
         try {
             const response = await api.post('/api/v1/admin/login', { email, password })
-            console.log(response,"vhvhvhvh");
             toast.success(response.data.message)
             router.push('/dashboard');
         } catch (error) {

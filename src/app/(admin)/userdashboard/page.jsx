@@ -32,9 +32,7 @@ const UserCard = ({ user }) => {
     }, [refresh])
 
     return (
-        <div className="flex">
-            <AdminSidebar />
-
+        <div className='flex ml-10'>
             {userData.map((user, index) => (
                 <div key={index} className="bg-userCard rounded-lg shadow-lg p-6 w-64 text-center mx-auto my-10 h-[350px]">
                     <div className="flex justify-center mb-4">

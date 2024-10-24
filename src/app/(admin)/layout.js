@@ -4,14 +4,13 @@ import React from 'react';
 
 const layout = ({ children }) => {
     return (
-        <div>
+        <div className='flex h-screen overflow-hidden'>
             <AdminSidebar />
-            <main>
-                {children} {/* Render the child components */}
+            <main className='flex-1 overflow-y-auto'>
+                <div className="p-4">
+                    {children} {/* Render the child components */}
+                </div>
             </main>
-            <footer>
-                <p>My Application Footer</p>
-            </footer>
         </div>
     );
 };
