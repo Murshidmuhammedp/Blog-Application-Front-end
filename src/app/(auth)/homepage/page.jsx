@@ -7,6 +7,7 @@ import arrow2 from '../../../../public/images/arrow2.png'
 import LogoNavbar from '@/components/LogoNavbar';
 import About from '@/pages/About';
 import Footer from '@/pages/Footer';
+import userAuth from '@/zustand/useAuth';
 
 const HomePage = () => {
 
@@ -17,7 +18,6 @@ const HomePage = () => {
       await api.get('/api/v1/blogs/')
         .then((result) => {
           setBlogs(result.data.data)
-          console.log(result)
         }).catch((error) => {
           console.log(error)
         })
@@ -26,6 +26,7 @@ const HomePage = () => {
   }, []);
 
   const dummyImage = 'https://currentaffairs.adda247.com/wp-content/uploads/multisite/sites/5/2022/06/05074905/world-environment-day.jpg';
+  const { user } = userAuth();
 
   return (
     <>
@@ -175,7 +176,7 @@ const HomePage = () => {
 
           {/* Grid for other blogs */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-gray-700 p-14">
-            
+
             {blogs.slice(1, 7).map((blog, index) => (
               <div key={index} className="bg-customGray rounded-lg shadow-md p-4">
                 <img

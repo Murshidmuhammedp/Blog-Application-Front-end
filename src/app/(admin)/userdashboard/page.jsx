@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Sidebar from '../dashboard/page';
 import api from '@/api/interSepter';
 import toast from 'react-hot-toast';
+import AdminSidebar from '@/components/AdminSidebar';
 
 const UserCard = ({ user }) => {
     const [userData, setUserdata] = useState([]);
@@ -33,7 +33,7 @@ const UserCard = ({ user }) => {
 
     return (
         <div className="flex">
-            <Sidebar />
+            <AdminSidebar />
 
             {userData.map((user, index) => (
                 <div key={index} className="bg-userCard rounded-lg shadow-lg p-6 w-64 text-center mx-auto my-10 h-[350px]">

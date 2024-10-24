@@ -1,10 +1,10 @@
 "use client";
 
 import React from 'react';
-import Sidebar from '../dashboard/page';
 import { useForm } from 'react-hook-form';
 import api from '@/api/interSepter';
 import toast from 'react-hot-toast';
+import AdminSidebar from '@/components/AdminSidebar';
 
 const EditBlogPage = () => {
 
@@ -22,7 +22,7 @@ const EditBlogPage = () => {
     const categories = ["Technology", "Health & Fitness", "Lifestyle", "Business & Finance", "Travel", "Food & Recipes", "Entertainment", "Education", "Fashion & Beauty", "Sports", "Politics", "Automobile", "Finance", "Wellness"]
     return (
         <div className="flex">
-            <Sidebar />
+            <AdminSidebar />
             <div className="flex justify-center items-center min-h-screen w-full bg-black text-white p-6">
                 <form onSubmit={handleSubmit(onSubmit)} className="bg-customGray rounded-lg shadow-lg p-8 w-[1000px]  h-[850px]">
                     <div className="mb-6">

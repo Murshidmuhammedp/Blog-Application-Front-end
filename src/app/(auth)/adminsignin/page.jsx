@@ -5,9 +5,11 @@ import Image from 'next/image';
 import signinImage from '../../../../public/images/adminLogin.png';
 import api from '@/api/interSepter';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const SignIn = () => {
 
+    const router = useRouter();
     const [email, setemail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -15,9 +17,12 @@ const SignIn = () => {
         e.preventDefault();
         try {
             const response = await api.post('/api/v1/admin/login', { email, password })
+            console.log(response,"vhvhvhvh");
             toast.success(response.data.message)
+            router.push('/dashboard');
         } catch (error) {
-            toast.error(error.response.data.message)
+            console.log(error)
+            toast.error(error.response.data.message);
         }
     }
     return (

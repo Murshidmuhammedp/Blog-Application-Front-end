@@ -17,7 +17,6 @@ const page = () => {
             await api.get('/api/v1/blogs/')
                 .then((result) => {
                     setBlogs(result.data.data)
-                    console.log(result)
                 }).catch((error) => {
                     console.log(error)
                 })
@@ -31,8 +30,6 @@ const page = () => {
         <div>
             <LogoNavbar />
             <Image src={image} />
-
-            {/* Blog Detailed Pages */}
 
             <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row">
                 {/* Left Content Area */}

@@ -9,20 +9,31 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { signInSchema } from '@/schemas/authSchema';
 import api from '@/api/interSepter';
 import toast from 'react-hot-toast';
+import userAuth from '@/zustand/useAuth';
+
 
 const SignIn = () => {
 
     const methods = useForm({ resolver: zodResolver(signInSchema) });
 
     const { register, formState: { errors } } = methods;
-
+const {setUser,user}=userAuth();
     const onSubmit2 = async (data) => {
         try {
             const { termsAccepted, ...dataToSend } = data
             const response = await api.post('/api/v1/users/login', dataToSend)
             toast.success(response.data.message)
+            console.log(response);
+            localStorage.setItem('token',response.data.token)
+            document.cookies = `token=${response.data.token}; path=/; max-age=3600; SameSite=Lax; Secure`;
+            // const token = request.cookies.get("token");
+
+    // console.log(token, "token retrieved from cookie");
+            localStorage.setItem('user',JSON.stringify(response.data.data))
+              setUser(response.data.data)
         } catch (error) {
             toast.error(error.response.data.message)
+            console.log(error)
         }
     };
 

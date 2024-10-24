@@ -1,10 +1,10 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import Sidebar from '../dashboard/page'
 import api from '@/api/interSepter'
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+import AdminSidebar from '@/components/AdminSidebar';
 
 
 const ListBlogPage = () => {
@@ -29,7 +29,7 @@ const ListBlogPage = () => {
 
     return (
         <div className="flex">
-            <Sidebar />
+            <AdminSidebar />
 
             <div className="overflow-x-auto  p-10 w-full">
                 <table className="w-[1150px] bg-customGray shadow-md rounded-lg">
