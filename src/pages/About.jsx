@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../../public/images/logo.png";
+import logo from "../../../front-end/public/images/logo.png";
 import arrow from "../../public/images/arrow.png";
 import Image from 'next/image';
 

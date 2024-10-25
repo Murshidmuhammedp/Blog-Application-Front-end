@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../public/images/futureTech.png";
+import logo from "../../../front-end/public/images/futureTech.png";
 
 const AdminSidebar = () => {
     const [isBlogOpen, setIsBlogOpen] = useState(false);
