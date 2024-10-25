@@ -53,4 +53,4 @@ Steps for Deployment
 * Frontend:
 Deploy to Vercel by connecting your GitHub repository and setting the environment variables in the Vercel dashboard.
 * Backend:
-Deploy to Heroku/Render by connecting your GitHub repository and setting environment variables in the platform's dashboard.
+Deploy to Render by connecting your GitHub repository and setting environment variables in the platform's dashboard.
