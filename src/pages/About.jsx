@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../../public/images/logo.png";
+// import logo from "../../public/images/logo.png";
 // import arrow from "../../public/images/arrow.png";
 import Image from 'next/image';
 
@@ -9,7 +9,7 @@ const About = () => {
             <div className="max-w-6xl mx-auto h-full mt-20">
                 <div className='flex flex-col md:flex-row justify-between  mb-20 '>
                     <div className="flex items-center mb-4 md:mb-0 mr-14">
-                        <Image src={logo} alt="FutureTech Logo" width={100} height={100} className="sm:w-[200px] sm:h-[130px]" />
+                        <Image src={"/images/logo.png"} alt="FutureTech Logo" width={100} height={100} className="sm:w-[200px] sm:h-[130px]" />
                     </div>
                     <div className=" md:text-left">
                         <p className="text-lg font-bold text-white mb-6 bg-customGray1 p-2 w-full md:w-1/3 rounded-md">Learn, Connect, and Innovate</p>
