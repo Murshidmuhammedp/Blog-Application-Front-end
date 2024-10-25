@@ -8,7 +8,7 @@ import arrow2 from '../../../../public/images/arrow2.png'
 import About from '@/pages/About'
 import Footer from '@/pages/Footer'
 
-const page = () => {
+const BlogPage= () => {
 
     const [blogs, setBlogs] = useState([])
 
@@ -139,4 +139,4 @@ const page = () => {
     )
 }
 
-export default page
+export default BlogPage
