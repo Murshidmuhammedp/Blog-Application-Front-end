@@ -46,7 +46,6 @@ const HomePage = () => {
       <LogoNavbar />
       <main className="min-h-screen bg-customGray text-white p-8">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Section */}
           <section className="mb-20">
             <p className="text-gray-400 mb-4">Your Journey to Tomorrow Begins Here</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 max-w-2xl">
@@ -56,8 +55,6 @@ const HomePage = () => {
               Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines
               think, learn, and reshape the future. Join us on this visionary expedition into the heart of AI.
             </p>
-
-            {/* Stats Row */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-t border-gray-800">
               <div>
                 <h3 className="text-4xl font-bold mb-2">300<span className="text-yellow-400">+</span></h3>
@@ -73,8 +70,6 @@ const HomePage = () => {
               </div>
             </div>
           </section>
-
-          {/* Resources Section */}
           <section className="mb-20">
             <div className="bg-gray-900 rounded-xl p-8 relative overflow-hidden">
               <div className="flex items-center gap-2 mb-4">
@@ -94,8 +89,6 @@ const HomePage = () => {
               </button>
             </div>
           </section>
-
-          {/* Features Grid */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             <div className="bg-gray-900 p-8 rounded-xl">
               <div className="w-12 h-12 bg-yellow-400/10 rounded-lg mb-6 flex items-center justify-center">
@@ -136,10 +129,8 @@ const HomePage = () => {
               <p className="text-gray-400 text-sm">2 million monthly readers</p>
             </div>
           </section>
-
-          {/* Headlines Section */}
           <section>
-            <h2 className="text-4xl md:text-5xl mb-6">Today's Headlines: Stay Informed</h2>
+            <h2 className="text-4xl md:text-5xl mb-6">Today&apos;s Headlines: Stay Informed</h2>
             <p className="text-gray-400 max-w-3xl">
               Explore the latest news from around the world. We bring you up-to-the-minute updates on the most significant events, trends, and stories. Discover
               the world through our news coverage.
@@ -148,13 +139,14 @@ const HomePage = () => {
         </div>
 
         <div className="p-6 bg-customGray">
-          {/* Full-width Featured Blog */}
           {blogs.length > 0 && (
             <div className="mb-4 p-10 bg-customGray rounded-sm shadow-lg md:flex">
               <div className="md:w-1/3">
-                <img
+                <Image
                   src={blogs[0].image || dummyImage}
                   alt={blogs[0].BlogTitle}
+                  width={800}
+                  height={600}
                   className="w-full h-full rounded-sm object-cover"
                 />
               </div>
@@ -201,9 +193,11 @@ const HomePage = () => {
 
             {blogs.slice(1, 7).map((blog, index) => (
               <div key={index} className="bg-customGray rounded-lg shadow-md p-4">
-                <img
+                <Image
                   src={blog.image || dummyImage}
                   alt={blog.BlogTitle}
+                  width={800}
+                  height={600}
                   className="w-full h-48 rounded-lg object-cover mb-4"
                 />
                 <h3 className="text-lg font-semibold mb-2">{blog.BlogTitle}</h3>

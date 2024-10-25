@@ -1,5 +1,5 @@
 import userAuth from "@/zustand/useAuth";
-import HomePage from "./(auth)/homepage/page";
+import HomePage from "./(user)/homepage/page";
 
 export default function Home() {
 

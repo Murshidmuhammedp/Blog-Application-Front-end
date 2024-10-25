@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Footer = () => {
     return (
         <footer className="bg-black text-white py-8 px-14">
@@ -73,17 +75,21 @@ const Footer = () => {
                         </svg>
                     </a>
                     <a href="https://www.facebook.com" className="text-gray-400 hover:text-white bg-white">
-                        <img
+                        <Image
                             src="https://cdn-icons-png.flaticon.com/512/59/59439.png"
                             alt="Facebook"
                             className="w-6 h-6"
+                            width={24}
+                            height={24}
                         />
                     </a>
                     <a href="https://www.linkedin.com" className="text-gray-400 hover:text-white">
-                        <img
+                        <Image
                             src="https://www.citypng.com/public/uploads/preview/hd-black-linkedin-in-icon-text-symbol-sign-png-7017516950456912bpmmmpwj3.png"
                             alt="LinkedIn"
                             className="w-6 h-6"
+                            width={24}
+                            height={24}
                         />
                     </a>
                 </div>

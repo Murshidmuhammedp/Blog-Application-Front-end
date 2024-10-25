@@ -40,6 +40,8 @@ const UserCard = ({ user }) => {
                         <Image
                             src={user?.image || 'https://via.placeholder.com/100'}
                             alt={user?.name || 'User Avatar'}
+                            width={100}
+                            height={100}
                             className="w-24 h-24 rounded-full border-2 border-gray-300"
                         />
                     </div>

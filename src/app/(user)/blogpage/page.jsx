@@ -8,7 +8,7 @@ import arrow2 from '../../../../public/images/arrow2.png'
 import About from '@/pages/About'
 import Footer from '@/pages/Footer'
 
-const BlogPage= () => {
+const BlogPage = () => {
 
     const [blogs, setBlogs] = useState([])
 
@@ -29,7 +29,7 @@ const BlogPage= () => {
     return (
         <div>
             <LogoNavbar />
-            <Image src={image} />
+            <Image src={image} alt='image' />
 
             <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row">
                 {/* Left Content Area */}
@@ -109,9 +109,11 @@ const BlogPage= () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6  p-14">
                     {blogs.slice(1, 4).map((blog, index) => (
                         <div key={index} className="bg-customGray rounded-lg shadow-md p-4">
-                            <img
+                            <Image
                                 src={blog.image || dummyImage}
                                 alt={blog.BlogTitle}
+                                width={800}
+                                height={600}
                                 className="w-full h-48 rounded-md object-cover mb-4"
                             />
                             <h3 className="text-lg font-semibold mb-2">{blog.BlogTitle}</h3>
@@ -125,7 +127,7 @@ const BlogPage= () => {
                             <div className='flex justify-end'>
                                 <button className="flex items-center border border-gray-500 text-gray-300 px-4 py-2 rounded-md hover:bg-gray-800 font-extralight">
                                     Read More
-                                    <Image src={arrow2} className="ml-2 w-4" alt="Arrow Icon" />
+                                    <Image src={arrow2} className="ml-2 w-4" alt="Arrow" />
                                 </button>
                             </div>
                         </div>
