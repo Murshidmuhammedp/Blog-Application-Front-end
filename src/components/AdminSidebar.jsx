@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import logo from "../../../front-end/public/images/futureTech.png";
+// import logo from "../../../front-end/public/images/futureTech.png";
 
 const AdminSidebar = () => {
     const [isBlogOpen, setIsBlogOpen] = useState(false);
@@ -32,7 +32,7 @@ const AdminSidebar = () => {
                     } md:translate-x-0 transition-transform duration-300 ease-in-out z-40`}
             >
                 <div className="flex items-center justify-center mb-10">
-                    <Image src={logo} alt="Logo" width={150} height={60} />
+                    <Image src="/images/futureTech.png" alt="Logo" width={150} height={60} />
                 </div>
                 <div className="space-y-6">
                     <div>
