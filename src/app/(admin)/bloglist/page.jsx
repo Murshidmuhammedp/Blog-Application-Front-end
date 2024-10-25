@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 
 const ListBlogPage = () => {
     const router = useRouter();
+    
     const [blogList, setBlogList] = useState([])
     const [refresh, setRefresh] = useState(false)
 
