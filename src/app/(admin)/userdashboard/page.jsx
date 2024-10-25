@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import api from '@/api/interSepter';
 import toast from 'react-hot-toast';
 import AdminSidebar from '@/components/AdminSidebar';
+import Image from 'next/image';
 
 const UserCard = ({ user }) => {
     const [userData, setUserdata] = useState([]);
@@ -36,7 +37,7 @@ const UserCard = ({ user }) => {
             {userData.map((user, index) => (
                 <div key={index} className="bg-userCard rounded-lg shadow-lg p-6 w-64 text-center mx-auto my-10 h-[350px]">
                     <div className="flex justify-center mb-4">
-                        <img
+                        <Image
                             src={user?.image || 'https://via.placeholder.com/100'}
                             alt={user?.name || 'User Avatar'}
                             className="w-24 h-24 rounded-full border-2 border-gray-300"
