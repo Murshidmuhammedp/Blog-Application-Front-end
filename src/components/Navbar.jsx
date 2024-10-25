@@ -22,6 +22,7 @@ const LogoNavbar = () => {
                 <a href="#" className="text-gray-500 hover:text-gray-400">News</a>
                 <a href="#" className="text-gray-500 hover:text-gray-400">Podcasts</a>
                 <a href="#" className="text-gray-500 hover:text-gray-400">Resources</a>
+                <a href="/userblogcreate" className="text-gray-300 hover:text-gray-400">Create Blog</a>
             </div>
             <div className="hidden md:block">
                 <a href="#" className="bg-yellow-400 text-black px-4 py-2  rounded-md hover:bg-yellow-500 mr-2">

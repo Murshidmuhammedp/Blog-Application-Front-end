@@ -32,7 +32,6 @@ const BlogPage = () => {
             <Image src={image} alt='image' />
 
             <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row">
-                {/* Left Content Area */}
                 <div className="md:w-2/3 pr-6">
                     <h1 className="text-3xl font-bold mb-4 text-gray-400">Introduction Heading</h1>
                     <p className="text-white mb-6">
@@ -49,7 +48,6 @@ const BlogPage = () => {
                     </p>
                 </div>
 
-                {/* Right Meta Information Area */}
                 <div className="md:w-1/3 mt-8 md:mt-0">
                     <div className="bg-customGray p-4 rounded-lg mb-6">
                         <div className="flex justify-evenly text-gray-400 mb-4">
@@ -96,9 +94,6 @@ const BlogPage = () => {
                     </div>
                 </div>
             </div>
-
-
-            {/* Blog End  */}
 
             <div className=' border-t border-gray-700'>
                 <h1>Similar news</h1>
