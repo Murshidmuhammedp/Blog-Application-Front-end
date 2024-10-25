@@ -18,7 +18,7 @@ const LogoNavbar = () => {
                 <Image src={logo} alt="FutureTech Logo" width={120} height={40} className="sm:w-[130px] sm:h-[40px]" />
             </div>
             <div className="hidden md:flex items-center space-x-6">
-                <a href="#" className="text-gray-500 hover:text-gray-400">Home</a>
+                <a href="/homepage" className="text-gray-500 hover:text-gray-400">Home</a>
                 <a href="#" className="text-gray-500 hover:text-gray-400">News</a>
                 <a href="#" className="text-gray-500 hover:text-gray-400">Podcasts</a>
                 <a href="#" className="text-gray-500 hover:text-gray-400">Resources</a>
