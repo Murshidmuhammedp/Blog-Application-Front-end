@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from "../../../front-end/public/images/logo.png";
-import arrow from "../../public/images/arrow.png";
+// import logo from "../../../front-end/public/images/logo.png";
+// import arrow from "../../public/images/arrow.png";
 import Image from 'next/image';
 
 const About = () => {
@@ -9,7 +9,7 @@ const About = () => {
             <div className="max-w-6xl mx-auto h-full mt-20">
                 <div className='flex flex-col md:flex-row justify-between  mb-20 '>
                     <div className="flex items-center mb-4 md:mb-0 mr-14">
-                        <Image src={logo} alt="FutureTech Logo" width={100} height={100} className="sm:w-[200px] sm:h-[130px]" />
+                        <Image src="/images/logo.png" alt="FutureTech Logo" width={100} height={100} className="sm:w-[200px] sm:h-[130px]" />
                     </div>
                     <div className=" md:text-left">
                         <p className="text-lg font-bold text-white mb-6 bg-customGray1 p-2 w-full md:w-1/3 rounded-md">Learn, Connect, and Innovate</p>
@@ -28,7 +28,7 @@ const About = () => {
                         <div className="bg-customGray p-6 rounded-lg shadow-lg">
                             <div className="flex justify-between mb-2">
                                 <h2 className="text-xl font-semibold mr-2">Resource Access</h2>
-                                <Image src={arrow} alt="arrow button" width={30} height={30} className="sm:w-[40px] sm:h-[40px]" />
+                                <Image src="/images/arrow.png" alt="arrow button" width={30} height={30} className="sm:w-[40px] sm:h-[40px]" />
                             </div>
                             <p className="text-gray-400">
                                 Visitors can access a wide range of resources, including ebooks, whitepapers, and reports.
@@ -37,7 +37,7 @@ const About = () => {
                         <div className="bg-customGray p-6 rounded-lg shadow-lg">
                             <div className="flex justify-between mb-2">
                                 <h2 className="text-xl font-semibold mr-2">Community Forum</h2>
-                                <Image src={arrow} alt="arrow button" width={30} height={30} className="sm:w-[40px] sm:h-[40px]" />
+                                <Image src="/images/arrow.png" alt="arrow button" width={30} height={30} className="sm:w-[40px] sm:h-[40px]" />
                             </div>
                             <p className="text-gray-400">
                                 Join our active community forum to discuss industry trends, share insights, and collaborate with peers.
@@ -46,7 +46,7 @@ const About = () => {
                         <div className="bg-customGray p-6 rounded-lg shadow-lg">
                             <div className="flex justify-between mb-2">
                                 <h2 className="text-xl font-semibold mr-2">Tech Events</h2>
-                                <Image src={arrow} alt="arrow button" width={30} height={30} className="sm:w-[40px] sm:h-[40px]" />
+                                <Image src="/images/arrow.png" alt="arrow button" width={30} height={30} className="sm:w-[40px] sm:h-[40px]" />
                             </div>
                             <p className="text-gray-400">
                                 Stay updated on upcoming tech events, webinars, and conferences to enhance your knowledge.
