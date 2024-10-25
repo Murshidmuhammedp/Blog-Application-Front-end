@@ -9,8 +9,10 @@ import { signUpSchema } from '@/schemas/authSchema';
 import { zodResolver } from '@hookform/resolvers/zod'
 import api from '@/api/interSepter';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const SignUp = () => {
+    const router = useRouter();
     const methods = useForm({ resolver: zodResolver(signUpSchema) });
     const { register, formState: { errors } } = methods;
 
@@ -19,6 +21,7 @@ const SignUp = () => {
             const { termsAccepted, ...dataToSend } = data;
             const response = await api.post('/api/v1/users/register', dataToSend)
             toast.success(response.data.message)
+            router.push('/signin')
         } catch (error) {
             console.log(error)
         }

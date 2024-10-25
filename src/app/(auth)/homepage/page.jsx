@@ -8,9 +8,13 @@ import LogoNavbar from '@/components/LogoNavbar';
 import About from '@/pages/About';
 import Footer from '@/pages/Footer';
 import userAuth from '@/zustand/useAuth';
+import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+
 
 const HomePage = () => {
 
+  const router = useRouter();
   const [blogs, setBlogs] = useState([])
 
   useEffect(() => {
@@ -24,6 +28,15 @@ const HomePage = () => {
     }
     blogList();
   }, []);
+
+  const handleLogin = () => {
+    router.push('/signin');
+    toast.error("Please sign in to continue.");
+  };
+
+  const handleBlogView = () => {
+    router.push('/blogpage');
+  }
 
   const dummyImage = 'https://currentaffairs.adda247.com/wp-content/uploads/multisite/sites/5/2022/06/05074905/world-environment-day.jpg';
   const { user } = userAuth();
@@ -166,15 +179,24 @@ const HomePage = () => {
                   <button className="border border-gray-500 text-white px-4 py-2 rounded-full hover:bg-gray-800">Share</button>
                 </div>
                 <div className='flex justify-end'>
-                  <button className=" border border-gray-500 text-gray-300 px-6 py-2 rounded-md  hover:bg-gray-800">
+                  {localStorage.getItem("token") ? (<button
+                    className=" border border-gray-500 text-gray-300 px-6 py-2 rounded-md  hover:bg-gray-800"
+                    onClick={() => handleBlogView()}
+                  >
                     Read More
-                  </button>
+                  </button>) : (
+                    <button
+                      className=" border border-gray-500 text-gray-300 px-6 py-2 rounded-md  hover:bg-gray-800"
+                      onClick={() => handleLogin()}
+                    >
+                      Read More
+                    </button>)}
+
                 </div>
               </div>
             </div>
           )}
 
-          {/* Grid for other blogs */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-gray-700 p-14">
 
             {blogs.slice(1, 7).map((blog, index) => (
@@ -193,10 +215,21 @@ const HomePage = () => {
                   <button className="border border-gray-500 text-white px-4 py-2 rounded-full hover:bg-gray-800">Share</button>
                 </div>
                 <div className='flex justify-end'>
-                  <button className="flex items-center border border-gray-500 text-gray-300 px-4 py-2 rounded-md hover:bg-gray-800 font-extralight">
+                  {localStorage.getItem("token") ? (<button
+                    className="flex items-center border border-gray-500 text-gray-300 px-4 py-2 rounded-md hover:bg-gray-800 font-extralight"
+                    onClick={() => handleBlogView()}
+                  >
                     Read More
                     <Image src={arrow2} className="ml-2 w-4" alt="Arrow Icon" />
-                  </button>
+                  </button>) : (
+                    <button
+                      className="flex items-center border border-gray-500 text-gray-300 px-4 py-2 rounded-md hover:bg-gray-800 font-extralight"
+                      onClick={() => handleLogin()}
+                    >
+                      Read More
+                      <Image src={arrow2} className="ml-2 w-4" alt="Arrow Icon" />
+                    </button>)}
+
                 </div>
               </div>
             ))}

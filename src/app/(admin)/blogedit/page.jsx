@@ -9,14 +9,14 @@ import { useRouter } from 'next/navigation';
 const EditBlogPage = () => {
 
     const router = useRouter();
-    const { query } = router; 
+    // const { query } = router; 
     
     const { register,
         handleSubmit,
         formState: { errors }
     } = useForm()
 
-    const { id } = query;
+    // const { id } = query;
 
     const onSubmit = async (data) => {
         const response = await api.patch(`/api/v1/blogs/${id}`, data)

@@ -27,7 +27,10 @@ const LogoNavbar = () => {
                 <a href="#" className="bg-yellow-400 text-black px-4 py-2  rounded-md hover:bg-yellow-500 mr-2">
                     Contact Us
                 </a>
-                <a href="#" className="bg-blue-700 text-white px-4 py-2  rounded-md hover:bg-blue-600">
+                <a href="signin" className="bg-blue-700 text-white px-4 py-2  rounded-md hover:bg-blue-600" onClick={() => {
+                    localStorage.clear();
+                }}
+                >
                     Log Out
                 </a>
             </div>
